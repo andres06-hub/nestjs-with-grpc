@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package app;
+
+service ProjectGrpc {
+  rpc Example(DataRequest) returns (DataResponse);
+  rpc CreatePdf(DataReqPdf) returns (DataResponse);
+}
+
+message DataReqPdf {
+  string name = 1;
+  string description = 2;
+  string urlImage = 3;
+}
+
+message DataRequest {
+  string name = 1;
+  string message = 2;
+}
+
+message DataResponse {
+  bool success = 1;
+  string  message = 2;
+}
